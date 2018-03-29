@@ -1,0 +1,46 @@
+{
+  "name": "SamLa",
+  "version": "1.0.0",
+  "description": "Sam La Website",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack -p --progress --config webpack.config.js",
+    "dev-build": "webpack --progress -d --config webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --progress -d --config webpack.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sla16/samla.git"
+  },
+  "keywords": [
+    "samla"
+  ],
+  "author": "Sam La",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sla16/samla/issues"
+  },
+  "homepage": "https://github.com/sla16/samla#readme",
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "image-webpack-loader": "^4.2.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.3.0",
+    "webpack-cli": "^2.0.13"
+  }
+}

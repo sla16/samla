@@ -1,11 +1,14 @@
 from flask import Flask, render_template
 
-app = Flask(__name__, static_folder='../static/dist', template_folder='../static')
+app = Flask(__name__, static_folder='../src/dist', template_folder='../src')
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
+@app.errorhandler(404)
+def page_not_found(e):
   return render_template('html/404.html')
+
+@app.errorhandler(500)
+def application_error(e):
+  return render_template('html/500.html')
 
 @app.route('/')
 def index():
