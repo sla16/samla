@@ -2,3 +2,12 @@
   height: 50px;
   width: 50px;
 }
+
+.navOption {
+  color: var(--fresh-water);
+}
+
+.navOption:hover {
+  color: #0056b3;
+  text-decoration: none;
+}

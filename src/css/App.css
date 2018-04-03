@@ -1,5 +1,8 @@
-.content {
+.App_content {
   height: 100%;
-  overflow: hidden;
   width: 100%;
+}
+
+.App_logo {
+  min-height: 100%;
 }

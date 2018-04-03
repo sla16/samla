@@ -1,4 +1,13 @@
+:root {
+  --evening-night-blue: #005aa7;
+  --evening-night-gray: #fffde4;
+  --fresh-water: #88BBD6;
+  --ice: #99D3DF;
+  --linen: #E9E9E9;
+  --plaster: #CDCDCD;
+}
+
 body {
-  background-color: #cfe0e8;
+  background: linear-gradient(var(--evening-night-gray), var(--evening-night-blue));
   font-family: sans-serif;
 }
