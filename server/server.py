@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 
-app = Flask(__name__, static_folder='../src/dist', template_folder='../src')
+app = Flask(__name__, static_folder='../src/public', template_folder='../src')
 
 @app.errorhandler(404)
 def page_not_found(e):

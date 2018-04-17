@@ -1,3 +1,40 @@
+@keyframes animateaway {
+  0% {
+    background-color: white;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  0% {
+    top: -300px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.navBarContainer {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navBar {
+  animation: animateaway 0.4s;
+  position: relative;
+}
+
+.navBar-scrolled {
+  animation: animatetop 0.4s;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px 0px, rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;
+}
+
 .navIcon {
   height: 50px;
   width: 50px;

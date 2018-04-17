@@ -4,5 +4,23 @@
 }
 
 .App_logo {
-  min-height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 25%;
+}
+
+.App_header {
+  text-align: center;
+}
+
+.App_about {
+  padding-top: 24px;
+}
+
+.App_background {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
