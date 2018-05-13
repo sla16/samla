@@ -1,11 +1,17 @@
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
+
+const outputDirectory = 'dist';
+const clientDirectory = '/src/client';
+console.log(__dirname);
 
 module.exports = function() {
   return {
     entry: {
-      app: ['babel-polyfill', path.join(__dirname, '/js/index.jsx')]
+      app: ['babel-polyfill', path.join(__dirname, `${clientDirectory}/index.jsx`)]
     },
     module: {
       rules: [
@@ -54,10 +60,17 @@ module.exports = function() {
     },
     plugins: getPlugins(),
     output: {
-      filename: '[name].js',
-      path: path.join(__dirname, 'public'),
+      filename: 'bundle.js',
+      path: path.join(__dirname, outputDirectory),
       publicPath: '/',
       sourcePrefix: ''
+    },
+    devServer: {
+      port: 3000,
+      open: true,
+      proxy: {
+        '/api': 'http://localhost:8080'
+      }
     },
     resolve: {
       extensions: ['.js', '.jsx', '.css'],
@@ -71,8 +84,12 @@ module.exports = function() {
 
 function getPlugins() {
   return [
+    new CleanWebpackPlugin([outputDirectory]),
     new CopyWebpackPlugin([
-      {from: 'assets', to: 'assets'}
-    ])
+      {from: path.join(__dirname, `${clientDirectory}/assets`), to: 'assets'}
+    ]),
+    new HtmlWebpackPlugin({
+      template: './public/index.html'
+    })
   ];
 };

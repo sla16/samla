@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-import NavBar from 'js/controls/NavBar';
+import NavBar from './controls/NavBar';
 
-import github from 'assets/github.png';
-import 'css/App.css';
+import github from './assets/github.png';
+import './css/App.css';
 
 export default class App extends Component {
   constructor (props) {
