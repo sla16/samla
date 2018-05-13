@@ -2,3 +2,4 @@ venv
 settings.json
 node_modules
 dist
+.vscode
