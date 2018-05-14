@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { test } from './actions/test';
 
-import NavBar from './controls/NavBar';
+import NavBar from './components/NavBar';
 
 import github from './assets/github.png';
 import './css/App.css';
 
-export default class App extends Component {
+class App extends Component {
   constructor (props) {
     super(props);
     window.onscroll = this.updateNavBar.bind(this);
@@ -35,25 +37,22 @@ export default class App extends Component {
         <div id='about' className='App_about'>
           <h3 className='App_header'>About Me</h3>
           <div>
-            Placeholder for text
+            {this.props.test && this.props.test.message
+            }
           </div>
         </div>
 
-        <div id='other' className='App_other'>
-          <h3 className='App_header'>Other</h3>
-          <div>
-            Placeholder for text
-          </div>
-        </div>
-
-        <div id='contact' className='App_contact'>
+        {/* <div id='contact' className='App_contact'>
           <h3 className='App_header'>Contact</h3>
           <a href='https://github.com/sla16/samla' className='App_icon' target='_blank'><img alt='https://github.com/sla16/samla' src={github} /></a>
-        </div>
-
-        <div className='App_footer'>
-        </div>
+        </div> */}
       </div>
     )
   }
 }
+
+function mapStateToProps ({ test }) {
+  return { test };
+};
+
+export default connect(mapStateToProps)(App);
